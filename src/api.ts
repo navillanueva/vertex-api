@@ -1,27 +1,41 @@
 import axios from 'axios';
 import { signMessage } from './signer';
-import { VERTEX_BASE_URL, ALCHEMY_API_KEY } from './config';
-import { createPublicClient, http } from 'viem';
+import { VERTEX_BASE_URL, ALCHEMY_API_KEY, PRIVATE_KEY } from './config';
+import { createWalletClient, createPublicClient, http } from 'viem';
 import { arbitrumSepolia } from 'viem/chains';
+import { privateKeyToAccount } from 'viem/accounts';
+
+const padSenderAddress = (address: string): string => {
+    const hexAddress = address.toLowerCase().replace('0x', '');
+    const paddedAddress = hexAddress.padEnd(64, '0');
+    return `0x${paddedAddress}`;
+};
 
 export const placeOrder = async (
-    walletClient: any, // Viem wallet client
     productId: number,
     priceX18: string,
-    amount: string,
-    id: number
+    amount: string
 ) => {
     try {
-        const publicClient = createPublicClient({
+        const account = privateKeyToAccount(`0x${PRIVATE_KEY}`);
+
+        const wallet = createWalletClient({
             chain: arbitrumSepolia,
             transport: http('https://arb-sepolia.g.alchemy.com/v2/' + ALCHEMY_API_KEY),
+            account,
         });
 
-        // Step 2: Fetch sender address and nonce
-        const sender = await walletClient.getAddress();
-        const nonce = await publicClient.getTransactionCount({ address: sender });
+        const publicClient = createPublicClient({
+            chain: arbitrumSepolia,
+            transport: http(`https://arb-sepolia.g.alchemy.com/v2/${ALCHEMY_API_KEY}`),
+        });
 
-        const expiration = Math.floor(Date.now() / 1000) + 300; // 5 minutes from now
+        const sender = padSenderAddress(wallet.account.address).toString();
+        const nonce = "1";
+        const expiration = (Math.floor(Date.now() / 1000) + 300).toString(); // 5 minutes from now
+
+        console.log("This is the sender address:", sender);
+        console.log("This is the nonce:", nonce);
 
         const order = {
             sender,
@@ -32,14 +46,13 @@ export const placeOrder = async (
         };
 
         const orderMessage = JSON.stringify(order);
-        const signature = await signMessage(orderMessage);
+        const signature = await wallet.account.signMessage({ message: orderMessage });
 
         const payload = {
             place_order: {
                 product_id: productId,
                 order,
                 signature,
-                id,
             },
         };
 
