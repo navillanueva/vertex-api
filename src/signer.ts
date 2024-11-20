@@ -1,9 +1,14 @@
-import { ethers } from 'ethers';
-import { PRIVATE_KEY } from './config';
+import {createWalletClient, http} from 'viem';
+import {arbitrumSepolia} from 'viem/chains';
+import {ALCHEMY_API_KEY, PRIVATE_KEY} from './config';
+import {privateKeyToAccount} from 'viem/accounts';
 
-const wallet = new ethers.Wallet(PRIVATE_KEY);
+const walletClient = createWalletClient({
+    chain: arbitrumSepolia,
+    transport: http('https://arb-sepolia.g.alchemy.com/v2/' + ALCHEMY_API_KEY),
+    account: privateKeyToAccount(`0x${PRIVATE_KEY}`),
+});
 
 export const signMessage = async (message: string): Promise<string> => {
-    const signature = await wallet.signMessage(message);
-    return signature;
+    return await walletClient.signMessage({message});
 };

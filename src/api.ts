@@ -1,18 +1,28 @@
 import axios from 'axios';
 import { signMessage } from './signer';
-import { VERTEX_BASE_URL } from './config';
+import { VERTEX_BASE_URL, ALCHEMY_API_KEY } from './config';
+import { createPublicClient, http } from 'viem';
+import { arbitrumSepolia } from 'viem/chains';
 
 export const placeOrder = async (
+    walletClient: any, // Viem wallet client
     productId: number,
-    sender: string,
     priceX18: string,
     amount: string,
-    expiration: string,
-    nonce: string,
     id: number
 ) => {
     try {
-        // Construct the order object
+        const publicClient = createPublicClient({
+            chain: arbitrumSepolia,
+            transport: http('https://arb-sepolia.g.alchemy.com/v2/' + ALCHEMY_API_KEY),
+        });
+
+        // Step 2: Fetch sender address and nonce
+        const sender = await walletClient.getAddress();
+        const nonce = await publicClient.getTransactionCount({ address: sender });
+
+        const expiration = Math.floor(Date.now() / 1000) + 300; // 5 minutes from now
+
         const order = {
             sender,
             priceX18,
@@ -21,13 +31,9 @@ export const placeOrder = async (
             nonce,
         };
 
-        // Serialize the order object to a string for signing
         const orderMessage = JSON.stringify(order);
-
-        // Sign the serialized order
         const signature = await signMessage(orderMessage);
 
-        // Construct the full payload
         const payload = {
             place_order: {
                 product_id: productId,
@@ -37,7 +43,6 @@ export const placeOrder = async (
             },
         };
 
-        // Send the API request
         const response = await axios.post(`${VERTEX_BASE_URL}/execute`, payload, {
             headers: {
                 'Content-Type': 'application/json',
