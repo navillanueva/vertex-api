@@ -1,9 +1,16 @@
 import { placeOrder } from './api';
 import { VERTEX_BASE_URL } from './config';
 
+const padSenderAddress = (address: string): string => {
+    const hexAddress = address.toLowerCase().replace('0x', '');
+    const paddedAddress = hexAddress.padEnd(64, '0');
+    return `0x${paddedAddress}`;
+};
+
+
 const main = async () => {
     const productId = 1;
-    const sender = '0x5ca64308e32CEFfbfFC6E80e33D3EEB7E819afAa';
+    const sender = padSenderAddress('0x5ca64308e32CEFfbfFC6E80e33D3EEB7E819afAa');
     const priceX18 = '1000000000000000000';
     const amount = '1000000000000000000';
     const expiration = '4294967295';
