@@ -5,11 +5,21 @@ import { createWalletClient, createPublicClient, http } from 'viem';
 import { arbitrumSepolia } from 'viem/chains';
 import { privateKeyToAccount } from 'viem/accounts';
 
+let counter = 0;
+
 const padSenderAddress = (address: string): string => {
     const hexAddress = address.toLowerCase().replace('0x', '');
     const paddedAddress = hexAddress.padEnd(64, '0');
     return `0x${paddedAddress}`;
 };
+
+const genOrderNonce = (counter: number): string => {
+    const timestamp = Math.floor(Date.now() / 1000);
+    counter += 1;
+    const nonce = (BigInt(timestamp) << BigInt(32) + BigInt(counter));
+    return nonce.toString();
+};
+
 
 export const placeOrder = async (
     productId: number,
@@ -31,7 +41,7 @@ export const placeOrder = async (
         });
 
         const sender = padSenderAddress(wallet.account.address).toString();
-        const nonce = "1";
+        const nonce = genOrderNonce(counter);
         const expiration = (Math.floor(Date.now() / 1000) + 300).toString(); // 5 minutes from now
 
         console.log("This is the sender address:", sender);

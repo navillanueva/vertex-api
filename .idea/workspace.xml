@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3423487-ff84-4213-8244-192eb9e364c0" name="Changes" comment="feat: padding sender">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d3423487-ff84-4213-8244-192eb9e364c0" name="Changes" comment="feat: update read me">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +84,10 @@
       <updated>1732063312225</updated>
       <workItem from="1732063313762" duration="1997000" />
       <workItem from="1732099713937" duration="635000" />
+      <workItem from="1732122851176" duration="8099000" />
+      <workItem from="1732131115631" duration="20000" />
+      <workItem from="1732184673236" duration="244000" />
+      <workItem from="1732228250952" duration="310000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -109,7 +113,31 @@
       <option name="project" value="LOCAL" />
       <updated>1732064667954</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: switched to viem">
+      <option name="closed" value="true" />
+      <created>1732127099614</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732127099614</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: progress up to error 2011">
+      <option name="closed" value="true" />
+      <created>1732130402890</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732130402890</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: update read me">
+      <option name="closed" value="true" />
+      <created>1732130562764</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732130562764</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +157,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="feat: code" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: code" />
+    <MESSAGE value="feat: switched to viem" />
+    <MESSAGE value="feat: progress up to error 2011" />
+    <MESSAGE value="feat: update read me" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update read me" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
