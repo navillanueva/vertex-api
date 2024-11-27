@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3423487-ff84-4213-8244-192eb9e364c0" name="Changes" comment="feat: update read me">
+    <list default="true" id="d3423487-ff84-4213-8244-192eb9e364c0" name="Changes" comment="fix: adjusted nonce issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,9 @@
       <workItem from="1732122851176" duration="8099000" />
       <workItem from="1732131115631" duration="20000" />
       <workItem from="1732184673236" duration="244000" />
-      <workItem from="1732228250952" duration="310000" />
+      <workItem from="1732228250952" duration="1544000" />
+      <workItem from="1732615003214" duration="651000" />
+      <workItem from="1732659253375" duration="1400000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -137,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732130562764</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix: adjusted nonce issue">
+      <option name="closed" value="true" />
+      <created>1732228702063</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732228702063</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +169,8 @@
     <MESSAGE value="feat: switched to viem" />
     <MESSAGE value="feat: progress up to error 2011" />
     <MESSAGE value="feat: update read me" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update read me" />
+    <MESSAGE value="fix: adjusted nonce issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: adjusted nonce issue" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
