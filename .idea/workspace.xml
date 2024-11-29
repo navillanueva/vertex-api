@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3423487-ff84-4213-8244-192eb9e364c0" name="Changes" comment="fix: adjusted nonce issue">
+    <list default="true" id="d3423487-ff84-4213-8244-192eb9e364c0" name="Changes" comment="feat: switched moonwell to viem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +62,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\VMImages\vertex-api\src\vertex" />
       <recent name="C:\VMImages\vertex-api" />
     </key>
   </component>
@@ -89,6 +90,8 @@
       <workItem from="1732228250952" duration="1544000" />
       <workItem from="1732615003214" duration="651000" />
       <workItem from="1732659253375" duration="1400000" />
+      <workItem from="1732731155958" duration="1957000" />
+      <workItem from="1732782049737" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -146,7 +149,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732228702063</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: added interview exercise">
+      <option name="closed" value="true" />
+      <created>1732731937817</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732731937817</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: switched moonwell to viem">
+      <option name="closed" value="true" />
+      <created>1732733631207</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732733631207</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +189,9 @@
     <MESSAGE value="feat: progress up to error 2011" />
     <MESSAGE value="feat: update read me" />
     <MESSAGE value="fix: adjusted nonce issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: adjusted nonce issue" />
+    <MESSAGE value="feat: added interview exercise" />
+    <MESSAGE value="feat: switched moonwell to viem" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: switched moonwell to viem" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
