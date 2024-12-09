@@ -42,7 +42,7 @@ function numberOfWays(s: string): number {
     //     cnt01 = 6
     //     cnt10 = 6
     //     sum = 12
-    // The final result returned by the function would be 12.
+    // The final result returned by the function would be 12 and you didnt get it right.
 
 
 
