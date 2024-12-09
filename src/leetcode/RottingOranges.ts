@@ -34,7 +34,25 @@ function orangesRotting(grid: number[][]): number {
         const size = queue.length; // number of rotten oranges to process this minute
         let hasNewRotten = false;
 
-        for(let i=0; i<size; i++)
+        for(let i=0; i<size; i++){
+            // we load the row and column of the rotten tomato
+            const [r, c] = queue.shift()!;
+
+
+            for (const [dr, dc] of directions) {
+                const newR = r + dr;
+                const newC = c + dc;
+
+                if (newR < 0 || newC < 0 || newR >= rows || newC >= cols || grid[newR][newC] !== 1) {
+                    continue;
+                }
+
+                grid[newR][newC] = 2; // Mark the orange as rotten
+                queue.push([newR, newC]);
+                freshCount--;
+                hasNewRotten = true;
+            }
+        }
 
 
 
